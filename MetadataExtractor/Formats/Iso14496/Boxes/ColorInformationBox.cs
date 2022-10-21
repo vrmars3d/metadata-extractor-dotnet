@@ -6,7 +6,7 @@ namespace MetadataExtractor.Formats.Iso14496.Boxes
 {
     internal sealed class ColorInformationBox : Box
     {
-#if NET35 || NET45
+#if NET35 || NET45 || NET452
         private static readonly byte[] _emptyByteArray = new byte[0];
 #else
         private static readonly byte[] _emptyByteArray = System.Array.Empty<byte>();

@@ -146,6 +146,7 @@ This library targets:
 
 - .NET Framework 3.5 (`net35`)
 - .NET Framework 4.5 (`net45`)
+- .NET Framework 4.5.2 (`net452`)
 - .NET Standard 1.3 (`netstandard1.3`)
 - .NET Standard 2.0 (`netstandard2.0`)
 

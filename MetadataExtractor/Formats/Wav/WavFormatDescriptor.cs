@@ -11,7 +11,7 @@ namespace MetadataExtractor.Formats.Wav
     [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
     public sealed class WavFormatDescriptor : TagDescriptor<WavFormatDirectory>
     {
-#if NET35 || NET45
+#if NET35 || NET45 || NET452
         private static readonly byte[] _emptyByteArray = new byte[0];
 #else
         private static readonly byte[] _emptyByteArray = Array.Empty<byte>();
