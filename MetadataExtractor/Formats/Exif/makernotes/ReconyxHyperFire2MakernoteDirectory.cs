@@ -37,7 +37,7 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         public const int TagUserLabel = 104;
         public const int TagSerialNumber = 126;
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
              { TagFileNumber, "File Number" },
              { TagDirectoryNumber, "Directory Number" },

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>default</LangVersion>
     <TargetFramework>net461</TargetFramework>
     <OutputType>Exe</OutputType>
   </PropertyGroup>

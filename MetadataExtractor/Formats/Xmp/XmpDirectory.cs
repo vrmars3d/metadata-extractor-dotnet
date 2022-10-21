@@ -24,7 +24,7 @@ namespace MetadataExtractor.Formats.Xmp
         public const int TagXmpValueCount = 0xFFFF;
 
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
             { TagXmpValueCount, "XMP Value Count" }
         };
@@ -41,7 +41,7 @@ namespace MetadataExtractor.Formats.Xmp
         public override string Name => "XMP";
 
         // set only once to save some allocations
-        private static readonly IteratorOptions _iteratorOptions = new() { IsJustLeafNodes = true };
+        private static readonly IteratorOptions _iteratorOptions = new IteratorOptions { IsJustLeafNodes = true };
 
         /// <summary>Gets a map of all XMP properties in this directory, not just the known ones.</summary>
         /// <remarks>
@@ -55,7 +55,7 @@ namespace MetadataExtractor.Formats.Xmp
             {
                 try
                 {
-                    XmpIterator i = new((XmpMeta)XmpMeta, null, null, _iteratorOptions);
+                    XmpIterator i = new XmpIterator((XmpMeta)XmpMeta, null, null, _iteratorOptions);
                     while (i.HasNext())
                     {
                         var prop = (IXmpPropertyInfo)i.Next();
@@ -76,7 +76,7 @@ namespace MetadataExtractor.Formats.Xmp
             XmpMeta = xmpMeta;
 
             int valueCount = 0;
-            XmpIterator i = new((XmpMeta)XmpMeta, null, null, _iteratorOptions);
+            XmpIterator i = new XmpIterator((XmpMeta)XmpMeta, null, null, _iteratorOptions);
 
             while (i.HasNext())
             {

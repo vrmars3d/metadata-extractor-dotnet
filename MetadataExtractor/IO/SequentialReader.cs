@@ -281,7 +281,7 @@ namespace MetadataExtractor.IO
 
         public StringValue GetStringValue(int bytesRequested, Encoding? encoding = null)
         {
-            return new(GetBytes(bytesRequested), encoding);
+            return new StringValue(GetBytes(bytesRequested), encoding);
         }
 
         /// <summary>

@@ -76,7 +76,7 @@ namespace MetadataExtractor.Formats.GeoTiff
         public const int TagInsetNWPixelY                = 0xb7a8;
         public const int TagChartContourInterval         = 0xb7a9;
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
             { TagModelType, "Model Type" },
             { TagRasterType, "Raster Type" },

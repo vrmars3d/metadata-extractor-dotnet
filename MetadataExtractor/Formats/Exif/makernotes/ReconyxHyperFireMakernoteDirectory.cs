@@ -35,7 +35,7 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         public const int TagBatteryVoltage = 84;
         public const int TagUserLabel = 86;
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
              { TagMakernoteVersion, "Makernote Version" },
              { TagFirmwareVersion, "Firmware Version" },

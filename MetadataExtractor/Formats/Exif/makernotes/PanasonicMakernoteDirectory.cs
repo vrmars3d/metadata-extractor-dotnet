@@ -453,7 +453,7 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// </summary>
         public const int TagTransform1 = 0x8012;
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
             { TagQualityMode, "Quality Mode" },
             { TagFirmwareVersion, "Version" },

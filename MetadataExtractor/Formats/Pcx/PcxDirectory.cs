@@ -24,7 +24,7 @@ namespace MetadataExtractor.Formats.Pcx
         public const int TagHScrSize = 13;
         public const int TagVScrSize = 14;
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
             { TagVersion, "Version" },
             { TagBitsPerPixel, "Bits Per Pixel" },

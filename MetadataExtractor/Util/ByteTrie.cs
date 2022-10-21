@@ -27,7 +27,7 @@ namespace MetadataExtractor.Util
             }
         }
 
-        private readonly ByteTrieNode _root = new();
+        private readonly ByteTrieNode _root = new ByteTrieNode();
 
         /// <summary>Gets the maximum depth stored in this trie.</summary>
         public int MaxDepth { get; private set; }

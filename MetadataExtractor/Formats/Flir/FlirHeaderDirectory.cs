@@ -10,7 +10,7 @@ namespace MetadataExtractor.Formats.Flir
 
         public const int TagCreatorSoftware = 0;
 
-        private static readonly Dictionary<int, string> _nameByTag = new()
+        private static readonly Dictionary<int, string> _nameByTag = new Dictionary<int, string>
         {
             { TagCreatorSoftware, "Creator Software" }
         };

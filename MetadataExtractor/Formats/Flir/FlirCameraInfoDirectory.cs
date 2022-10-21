@@ -53,7 +53,7 @@ namespace MetadataExtractor.Formats.Flir
 
         public override string Name => "FLIR Camera Info";
 
-        private static readonly Dictionary<int, string> _nameByTag = new()
+        private static readonly Dictionary<int, string> _nameByTag = new Dictionary<int, string>
         {
             { TagEmissivity, "Emissivity" },
             { TagObjectDistance, "Object Distance" },

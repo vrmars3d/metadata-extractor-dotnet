@@ -175,7 +175,7 @@ namespace MetadataExtractor.Samples
             {
                 var (lat, lon) = UTMUPS.Reverse(zone, isNorthernHemisphere, pos.X, pos.Y);
 
-                return new(lat, lon);
+                return new GeoLocation(lat, lon);
             }
         }
     }

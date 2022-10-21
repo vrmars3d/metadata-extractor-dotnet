@@ -47,7 +47,7 @@ namespace MetadataExtractor.Formats.Iso14496.Boxes
 
         private ItemLocation ParseLocation(SequentialReader sr)
         {
-            return new(
+            return new ItemLocation(
                 ReadItemNumber(sr), ReadConstructionMethod(sr), sr.GetUInt16(),
                 ReadSizedPointer(sr, BaseOffsetSize), ReadExtentList(sr));
         }
@@ -78,8 +78,7 @@ namespace MetadataExtractor.Formats.Iso14496.Boxes
         }
 
         private ItemLocationExtent ReadExtent(SequentialReader sr) =>
-            new(
-                ReadItemIndex(sr), ReadSizedPointer(sr, OffsetSize),
+            new ItemLocationExtent(ReadItemIndex(sr), ReadSizedPointer(sr, OffsetSize),
                 ReadSizedPointer(sr, LengthSize));
 
         private ulong ReadItemIndex(SequentialReader sr) =>

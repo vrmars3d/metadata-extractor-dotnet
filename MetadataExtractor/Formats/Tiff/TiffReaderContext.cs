@@ -36,7 +36,7 @@ namespace MetadataExtractor.Formats.Tiff
             IsMotorolaByteOrder = isMotorolaByteOrder;
             IsBigTiff = isBigTiff;
 
-            _visitedIfds = new();
+            _visitedIfds = new HashSet<IfdIdentity>();
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace MetadataExtractor.Formats.Tiff
             // Note that we track these offsets in the global frame, not the reader's local frame.
             var globalIfdOffset = Reader.ToUnshiftedOffset(ifdOffset);
 
-            return _visitedIfds.Add(new(globalIfdOffset, kind));
+            return _visitedIfds.Add(new IfdIdentity(globalIfdOffset, kind));
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace MetadataExtractor.Formats.Tiff
         /// </remarks>
         public TiffReaderContext WithByteOrder(bool isMotorolaByteOrder)
         {
-            return new(Reader.WithByteOrder(isMotorolaByteOrder), IsMotorolaByteOrder, IsBigTiff);
+            return new TiffReaderContext(Reader.WithByteOrder(isMotorolaByteOrder), IsMotorolaByteOrder, IsBigTiff);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace MetadataExtractor.Formats.Tiff
         /// </summary>
         public TiffReaderContext WithShiftedBaseOffset(int baseOffset)
         {
-            return new(Reader.WithShiftedBaseOffset(baseOffset), IsMotorolaByteOrder, IsBigTiff);
+            return new TiffReaderContext(Reader.WithShiftedBaseOffset(baseOffset), IsMotorolaByteOrder, IsBigTiff);
         }
     }
 }

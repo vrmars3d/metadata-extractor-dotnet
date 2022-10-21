@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>default</LangVersion>
     <Description>Easily and efficiently read metadata from images, video and audio files.
 
 MetadataExtractor reads Exif, IPTC, XMP, ICC, Photoshop, WebP, PNG, BMP, GIF, ICO, PCX metadata from JPEG, TIFF WebP, PSD, PNG, BMP, GIF, ICO, PCX and camera RAW files.

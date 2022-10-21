@@ -45,7 +45,7 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         public const int TagFlashFirmwareVersion = 0x1002;
         public const int TagFlashSerialNumber = 0x1003;
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
             { TagEquipmentVersion, "Equipment Version" },
             { TagCameraType2, "Camera Type 2" },

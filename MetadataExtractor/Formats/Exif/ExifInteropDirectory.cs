@@ -10,7 +10,7 @@ namespace MetadataExtractor.Formats.Exif
     [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
     public class ExifInteropDirectory : ExifDirectoryBase
     {
-        private static readonly Dictionary<int, string> _tagNameMap = new();
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>();
 
         static ExifInteropDirectory()
         {

@@ -13,7 +13,7 @@ namespace MetadataExtractor.Formats.Flir
 
         public override string Name => "FLIR Raw Data";
 
-        private static readonly Dictionary<int, string> _nameByTag = new()
+        private static readonly Dictionary<int, string> _nameByTag = new Dictionary<int, string>
         {
             { TagRawThermalImageWidth, "Raw Thermal Image Width" },
             { TagRawThermalImageHeight, "Raw Thermal Image Height" },

@@ -14,7 +14,7 @@ namespace MetadataExtractor.Formats.WebP
         public const int TagHasAlpha = 3;
         public const int TagIsAnimation = 4;
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
             { TagImageHeight, "Image Height" },
             { TagImageWidth, "Image Width" },

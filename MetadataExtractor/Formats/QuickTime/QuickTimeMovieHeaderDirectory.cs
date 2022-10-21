@@ -27,7 +27,7 @@ namespace MetadataExtractor.Formats.QuickTime
 
         public override string Name => "QuickTime Movie Header";
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
             { TagVersion,           "Version" },
             { TagFlags,             "Flags" },

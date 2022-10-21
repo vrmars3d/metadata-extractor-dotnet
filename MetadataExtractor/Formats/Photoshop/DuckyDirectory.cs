@@ -14,7 +14,7 @@ namespace MetadataExtractor.Formats.Photoshop
         public const int TagComment = 2;
         public const int TagCopyright = 3;
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
             { TagQuality, "Quality" },
             { TagComment, "Comment" },

@@ -16,7 +16,7 @@ namespace MetadataExtractor.Formats.Gif
         public const int TagTransparentColorFlag = 4;
         public const int TagTransparentColorIndex = 5;
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
             { TagDelay, "Delay" },
             { TagDisposalMethod, "Disposal Method" },

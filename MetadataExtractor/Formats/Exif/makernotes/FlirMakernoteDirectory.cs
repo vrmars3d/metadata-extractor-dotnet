@@ -15,7 +15,7 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         public const int TagCameraTemperatureRangeMin = 0x0005;
         public const int TagCameraTemperatureRangeMax = 0x0006;
 
-        private static readonly Dictionary<int, string> _tagNameMap = new()
+        private static readonly Dictionary<int, string> _tagNameMap = new Dictionary<int, string>
         {
             { TagImageTemperatureMax, "Image Temperature Max" },
             { TagImageTemperatureMin, "Image Temperature Min" },
