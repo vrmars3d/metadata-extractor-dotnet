@@ -54,8 +54,8 @@ namespace MetadataExtractor.Samples
 
             (bool isNorthernHemisphere, int zone) = projectedCoordSystemType switch
             {
-                >= 32601 and <= 32660 => (true, projectedCoordSystemType - 32600),
-                >= 32701 and <= 32760 => (true, projectedCoordSystemType - 32700),
+                >= 32601 when projectedCoordSystemType <= 32660 => (true, projectedCoordSystemType - 32600),
+                >= 32701 when projectedCoordSystemType <= 32760 => (true, projectedCoordSystemType - 32700),
                 _ => (false, -1)
             };
 
