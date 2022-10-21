@@ -72,7 +72,7 @@ namespace MetadataExtractor.Formats.Exif
                 return true;
             }
 
-            if (CurrentDirectory is ExifIfd0Directory or PanasonicRawIfd0Directory)
+            if (CurrentDirectory is ExifIfd0Directory || CurrentDirectory is PanasonicRawIfd0Directory)
             {
                 if (tagId == ExifIfd0Directory.TagExifSubIfdOffset)
                 {
@@ -206,7 +206,7 @@ namespace MetadataExtractor.Formats.Exif
             }
 
             // Custom processing for embedded XMP data
-            if (tagId == ExifDirectoryBase.TagApplicationNotes && CurrentDirectory is ExifIfd0Directory or ExifSubIfdDirectory)
+            if (tagId == ExifDirectoryBase.TagApplicationNotes && (CurrentDirectory is ExifIfd0Directory || CurrentDirectory is ExifSubIfdDirectory))
             {
                 var xmpDirectory = new XmpReader().Extract(context.Reader.GetNullTerminatedBytes(valueOffset, byteCount));
                 xmpDirectory.Parent = CurrentDirectory;
@@ -772,15 +772,7 @@ namespace MetadataExtractor.Formats.Exif
             {
                 // It's tempting to say that every tag with ID 0x0E00 is a PIM tag, but we can't be 100% sure.
                 // Limit this to a specific set of directories.
-                if (directory is CasioType2MakernoteDirectory or
-                    KyoceraMakernoteDirectory or
-                    NikonType2MakernoteDirectory or
-                    OlympusMakernoteDirectory or
-                    PanasonicMakernoteDirectory or
-                    PentaxMakernoteDirectory or
-                    RicohMakernoteDirectory or
-                    SanyoMakernoteDirectory or
-                    SonyType1MakernoteDirectory)
+                if (directory is CasioType2MakernoteDirectory || directory is KyoceraMakernoteDirectory || directory is NikonType2MakernoteDirectory || directory is OlympusMakernoteDirectory || directory is PanasonicMakernoteDirectory || directory is PentaxMakernoteDirectory || directory is RicohMakernoteDirectory || directory is SanyoMakernoteDirectory || directory is SonyType1MakernoteDirectory)
                     return true;
             }
 

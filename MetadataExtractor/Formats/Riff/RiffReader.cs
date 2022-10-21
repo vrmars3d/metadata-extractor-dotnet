@@ -48,7 +48,7 @@ namespace MetadataExtractor.Formats.Riff
                 var maxPosition = reader.Position + sizeLeft;
                 ProcessChunks(reader, maxPosition, handler);
             }
-            catch (System.Exception e) when (e is ImageProcessingException or IOException)
+            catch (System.Exception e) when (e is ImageProcessingException || e is IOException)
             {
                 handler.AddError(e.Message);
             }

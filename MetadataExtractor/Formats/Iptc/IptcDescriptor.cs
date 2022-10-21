@@ -52,7 +52,7 @@ namespace MetadataExtractor.Formats.Iptc
         private string? GetTimeDescription(int tagType)
         {
             var s = Directory.GetString(tagType);
-            if (s is { Length: 6 or 11 })
+            if (s is { Length: 6 } || s is { Length: 11 })
                 return s.Substring(0, 2) + ':' + s.Substring(2, 2) + ':' + s.Substring(4);
             return s;
         }
