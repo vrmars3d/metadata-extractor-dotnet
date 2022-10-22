@@ -921,7 +921,7 @@ namespace MetadataExtractor
                         str.Append(vals[i]);
                     }
                 }
-                else if (componentType is { IsByRef: true })
+                else if (componentType is { } type && type.IsByRef)
                 {
                     var vals = (object[])array;
                     for (var i = 0; i < vals.Length; i++)
@@ -1003,7 +1003,7 @@ namespace MetadataExtractor
             if (o is IConvertible convertible)
                 return convertible;
 
-            if (o is Array { Length: 1, Rank: 1 } array)
+            if (o is Array array && array.Length == 1 && array.Rank == 1)
                 return array.GetValue(0) as IConvertible;
 
             return null;

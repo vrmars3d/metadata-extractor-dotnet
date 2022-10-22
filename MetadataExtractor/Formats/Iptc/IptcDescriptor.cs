@@ -44,7 +44,7 @@ namespace MetadataExtractor.Formats.Iptc
         private string? GetDateDescription(int tagType)
         {
             var s = Directory.GetString(tagType);
-            if (s is { Length: 8 })
+            if (s is { } b && b.Length == 8)
                 return s.Substring(0, 4) + ':' + s.Substring(4, 2) + ':' + s.Substring(6);
             return s;
         }
@@ -52,7 +52,7 @@ namespace MetadataExtractor.Formats.Iptc
         private string? GetTimeDescription(int tagType)
         {
             var s = Directory.GetString(tagType);
-            if (s is { Length: 6 } || s is { Length: 11 })
+            if (s is { } b && b.Length == 6 || s is { } s1 && s1.Length == 11)
                 return s.Substring(0, 2) + ':' + s.Substring(2, 2) + ':' + s.Substring(4);
             return s;
         }

@@ -130,7 +130,7 @@ namespace MetadataExtractor.Tools.FileProcessor
                             description = tag.Description;
 
                             // truncate the description if it's too long
-                            if (description is { Length: > 1024 })
+                            if (description is { } s && s.Length > 1024)
                                 description = description[..1024] + "...";
                         }
                         catch (Exception e)
@@ -150,7 +150,7 @@ namespace MetadataExtractor.Tools.FileProcessor
                             description);
                     }
 
-                    if (directory is XmpDirectory { XmpMeta: { } } xmpDirectory)
+                    if (directory is XmpDirectory xmpDirectory && xmpDirectory.XmpMeta is { })
                     {
                         foreach (var property in xmpDirectory.XmpMeta.Properties)
                         {

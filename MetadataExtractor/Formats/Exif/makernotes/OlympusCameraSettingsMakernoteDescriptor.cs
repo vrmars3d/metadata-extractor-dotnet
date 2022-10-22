@@ -304,7 +304,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// <returns></returns>
         public string? GetAfPointSelectedDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagAfPointSelected) is not Rational[] vals)
+            var vals = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagAfPointSelected) as Rational[];
+            if (vals is null)
                 return "n/a";
 
             if (vals.Length < 4)
@@ -428,7 +429,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// <returns></returns>
         public string? GetFlashIntensityDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagFlashIntensity) is not Rational[] vals)
+            var vals = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagFlashIntensity) as Rational[];
+            if (vals is null)
                 return null;
 
             if (vals.Length == 3)
@@ -453,7 +455,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         public string? GetManualFlashStrengthDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagManualFlashStrength) is not Rational[] vals)
+            var vals = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagManualFlashStrength) as Rational[];
+            if (vals is null)
                 return "n/a";
 
             if (vals.Length == 3)
