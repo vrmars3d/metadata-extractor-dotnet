@@ -83,7 +83,8 @@ namespace MetadataExtractor.Formats.Png
 
         public string? GetTextualDataDescription()
         {
-            return Directory.GetObject(PngDirectory.TagTextualData) is not IList<KeyValuePair> pairs
+            var pairs = Directory.GetObject(PngDirectory.TagTextualData) as IList<KeyValuePair>;
+            return pairs is null
                 ? null
                 : string.Join(
                     "\n",
