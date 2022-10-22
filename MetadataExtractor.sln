@@ -28,8 +28,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetadataExtractor.Tools.Fil
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetadataExtractor.Tools.JpegSegmentExtractor", "MetadataExtractor.Tools.JpegSegmentExtractor\MetadataExtractor.Tools.JpegSegmentExtractor.csproj", "{44ECB1E6-E2E0-4ECA-95CA-466E42903E42}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetadataExtractor.PowerShell", "MetadataExtractor.PowerShell\MetadataExtractor.PowerShell.csproj", "{96158958-7CA7-4BFC-A573-30F31E7F39A4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wiki", "Wiki", "{DD8398AB-EE55-4190-819D-F0AED820845B}"
 	ProjectSection(SolutionItems) = preProject
 		wiki\.gitignore = wiki\.gitignore
@@ -138,14 +136,6 @@ Global
 		{44ECB1E6-E2E0-4ECA-95CA-466E42903E42}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44ECB1E6-E2E0-4ECA-95CA-466E42903E42}.Release|x64.ActiveCfg = Release|Any CPU
 		{44ECB1E6-E2E0-4ECA-95CA-466E42903E42}.Release|x64.Build.0 = Release|Any CPU
-		{96158958-7CA7-4BFC-A573-30F31E7F39A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96158958-7CA7-4BFC-A573-30F31E7F39A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96158958-7CA7-4BFC-A573-30F31E7F39A4}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{96158958-7CA7-4BFC-A573-30F31E7F39A4}.Debug|x64.Build.0 = Debug|Any CPU
-		{96158958-7CA7-4BFC-A573-30F31E7F39A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96158958-7CA7-4BFC-A573-30F31E7F39A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96158958-7CA7-4BFC-A573-30F31E7F39A4}.Release|x64.ActiveCfg = Release|Any CPU
-		{96158958-7CA7-4BFC-A573-30F31E7F39A4}.Release|x64.Build.0 = Release|Any CPU
 		{F8B15C79-7D2A-44F2-9E8A-1D5127FE6D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8B15C79-7D2A-44F2-9E8A-1D5127FE6D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8B15C79-7D2A-44F2-9E8A-1D5127FE6D91}.Debug|x64.ActiveCfg = Debug|Any CPU
