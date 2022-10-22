@@ -24,8 +24,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetadataExtractor", "Metada
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetadataExtractor.Tests", "MetadataExtractor.Tests\MetadataExtractor.Tests.csproj", "{24F63B67-9F76-436B-8A4E-EA15FD35598D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetadataExtractor.Tools.FileProcessor", "MetadataExtractor.Tools.FileProcessor\MetadataExtractor.Tools.FileProcessor.csproj", "{F999E38B-CBE8-43D5-B7C8-F2FCC7851191}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wiki", "Wiki", "{DD8398AB-EE55-4190-819D-F0AED820845B}"
 	ProjectSection(SolutionItems) = preProject
 		wiki\.gitignore = wiki\.gitignore
@@ -116,14 +114,6 @@ Global
 		{24F63B67-9F76-436B-8A4E-EA15FD35598D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24F63B67-9F76-436B-8A4E-EA15FD35598D}.Release|x64.ActiveCfg = Release|Any CPU
 		{24F63B67-9F76-436B-8A4E-EA15FD35598D}.Release|x64.Build.0 = Release|Any CPU
-		{F999E38B-CBE8-43D5-B7C8-F2FCC7851191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F999E38B-CBE8-43D5-B7C8-F2FCC7851191}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F999E38B-CBE8-43D5-B7C8-F2FCC7851191}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F999E38B-CBE8-43D5-B7C8-F2FCC7851191}.Debug|x64.Build.0 = Debug|Any CPU
-		{F999E38B-CBE8-43D5-B7C8-F2FCC7851191}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F999E38B-CBE8-43D5-B7C8-F2FCC7851191}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F999E38B-CBE8-43D5-B7C8-F2FCC7851191}.Release|x64.ActiveCfg = Release|Any CPU
-		{F999E38B-CBE8-43D5-B7C8-F2FCC7851191}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
