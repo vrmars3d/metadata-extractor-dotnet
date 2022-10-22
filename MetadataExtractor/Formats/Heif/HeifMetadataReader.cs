@@ -93,7 +93,7 @@ namespace MetadataExtractor.Formats.Heif
                 var props = itemPropertyBox.Boxes.Descendant<ItemPropertyContainerBox>()?.Boxes;
                 var associations = itemPropertyBox.Boxes.Descendant<ItemPropertyAssociationBox>();
 
-                if (props is not null && associations is not null)
+                if (props is { } && associations is { })
                 {
                     ParsePropertyBoxes(
                         "HEIC Primary Item Properties",

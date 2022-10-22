@@ -51,7 +51,7 @@ namespace MetadataExtractor.Formats.Xmp
         public IDictionary<string, string> GetXmpProperties()
         {
             var propertyValueByPath = new Dictionary<string, string>();
-            if (XmpMeta != null)
+            if (XmpMeta is { })
             {
                 try
                 {
@@ -61,7 +61,7 @@ namespace MetadataExtractor.Formats.Xmp
                         var prop = (IXmpPropertyInfo)i.Next();
                         var path = prop.Path;
                         var value = prop.Value;
-                        if (path != null && value != null)
+                        if (path is { } && value is { })
                             propertyValueByPath.Add(path, value);
                     }
                 }
@@ -82,7 +82,7 @@ namespace MetadataExtractor.Formats.Xmp
             {
                 var prop = (IXmpPropertyInfo)i.Next();
 
-                if (prop.Path != null)
+                if (prop.Path is { })
                     valueCount++;
             }
 

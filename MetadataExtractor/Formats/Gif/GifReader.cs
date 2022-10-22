@@ -89,13 +89,13 @@ namespace MetadataExtractor.Formats.Gif
                     case (byte)'!': // 0x21
                     {
                         var extBlock = ReadGifExtensionBlock(reader);
-                        if (extBlock != null) yield return extBlock;
+                        if (extBlock is { }) yield return extBlock;
                         break;
                     }
                     case (byte)',': // 0x2c
                     {
                         var imageBlock = ReadImageBlock(reader);
-                        if (imageBlock != null) yield return imageBlock;
+                        if (imageBlock is { }) yield return imageBlock;
 
                         // skip image data blocks
                         SkipBlocks(reader);

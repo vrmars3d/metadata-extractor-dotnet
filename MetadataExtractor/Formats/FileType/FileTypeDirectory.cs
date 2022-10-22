@@ -34,11 +34,11 @@ namespace MetadataExtractor.Formats.FileType
             Set(TagDetectedFileTypeLongName, fileType.GetLongName());
 
             var mimeType = fileType.GetMimeType();
-            if (mimeType != null)
+            if (mimeType is { })
                 Set(TagDetectedFileMimeType, mimeType);
 
             var extension = fileType.GetCommonExtension();
-            if (extension != null)
+            if (extension is { })
                 Set(TagExpectedFileNameExtension, extension);
         }
 

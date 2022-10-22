@@ -39,7 +39,7 @@ namespace MetadataExtractor.Tests.Formats.Netpbm
             Assert.Equal(width, directory.GetInt32(NetpbmHeaderDirectory.TagWidth));
             Assert.Equal(height, directory.GetInt32(NetpbmHeaderDirectory.TagHeight));
 
-            if (maxVal != null)
+            if (maxVal is { })
                 Assert.Equal(maxVal, directory.GetInt32(NetpbmHeaderDirectory.TagMaximumValue));
         }
     }

@@ -497,14 +497,14 @@ namespace MetadataExtractor.Formats.Exif
                 PushDirectory(new OlympusMakernoteDirectory());
                 TiffReader.ProcessIfd(this, context.WithShiftedBaseOffset(makernoteOffset), 12);
             }
-            else if (cameraMake != null && cameraMake.StartsWith("MINOLTA", StringComparison.OrdinalIgnoreCase))
+            else if (cameraMake is { } && cameraMake.StartsWith("MINOLTA", StringComparison.OrdinalIgnoreCase))
             {
                 // Cases seen with the model starting with MINOLTA in capitals seem to have a valid Olympus makernote
                 // area that commences immediately.
                 PushDirectory(new OlympusMakernoteDirectory());
                 TiffReader.ProcessIfd(this, context, makernoteOffset);
             }
-            else if (cameraMake != null && cameraMake.TrimStart().StartsWith("NIKON", StringComparison.OrdinalIgnoreCase))
+            else if (cameraMake is { } && cameraMake.TrimStart().StartsWith("NIKON", StringComparison.OrdinalIgnoreCase))
             {
                 if (string.Equals("Nikon", firstFiveChars, StringComparison.Ordinal))
                 {
@@ -551,7 +551,7 @@ namespace MetadataExtractor.Formats.Exif
                 TiffReader.ProcessIfd(this, context, makernoteOffset + 12);
             }
             // Do this check LAST after most other Sony checks
-            else if (cameraMake != null && cameraMake.StartsWith("SONY", StringComparison.Ordinal) &&
+            else if (cameraMake is { } && cameraMake.StartsWith("SONY", StringComparison.Ordinal) &&
                 (context.Reader.GetByte(makernoteOffset) != 0x01 || context.Reader.GetByte(makernoteOffset + 1) != 0x00))
             {
                 // The IFD begins with the first Makernote byte (no ASCII name). Used in SR2 and ARW images
@@ -582,7 +582,7 @@ namespace MetadataExtractor.Formats.Exif
                 PushDirectory(new CanonMakernoteDirectory());
                 TiffReader.ProcessIfd(this, context, makernoteOffset);
             }
-            else if (cameraMake != null && cameraMake.StartsWith("CASIO", StringComparison.OrdinalIgnoreCase))
+            else if (cameraMake is { } && cameraMake.StartsWith("CASIO", StringComparison.OrdinalIgnoreCase))
             {
                 if (string.Equals("QVC\u0000\u0000\u0000", firstSixChars, StringComparison.Ordinal))
                 {
@@ -664,7 +664,7 @@ namespace MetadataExtractor.Formats.Exif
                 PushDirectory(new CasioType2MakernoteDirectory());
                 TiffReader.ProcessIfd(this, context.WithShiftedBaseOffset(makernoteOffset), 6);
             }
-            else if (cameraMake != null && (cameraMake.StartsWith("PENTAX", StringComparison.OrdinalIgnoreCase) || cameraMake.StartsWith("ASAHI", StringComparison.OrdinalIgnoreCase)))
+            else if (cameraMake is { } && (cameraMake.StartsWith("PENTAX", StringComparison.OrdinalIgnoreCase) || cameraMake.StartsWith("ASAHI", StringComparison.OrdinalIgnoreCase)))
             {
                 // NON-Standard TIFF IFD Data using Pentax Tags
                 // IFD has no Next-IFD pointer at end of IFD, and
@@ -689,7 +689,7 @@ namespace MetadataExtractor.Formats.Exif
                 PushDirectory(new SanyoMakernoteDirectory());
                 TiffReader.ProcessIfd(this, context.WithShiftedBaseOffset(makernoteOffset), 8);
             }
-            else if (cameraMake != null && cameraMake.StartsWith("RICOH", StringComparison.OrdinalIgnoreCase))
+            else if (cameraMake is { } && cameraMake.StartsWith("RICOH", StringComparison.OrdinalIgnoreCase))
             {
                 if (string.Equals(firstTwoChars, "Rv", StringComparison.Ordinal) ||
                     string.Equals(firstThreeChars, "Rev", StringComparison.Ordinal))

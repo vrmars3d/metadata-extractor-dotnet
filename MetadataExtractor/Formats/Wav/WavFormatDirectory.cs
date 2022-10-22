@@ -43,7 +43,7 @@ namespace MetadataExtractor.Formats.Wav
             tagName = tagType > 0 && tagType <= _tagNames.Length
                 ? _tagNames[tagType - 1]
                 : null;
-            return tagName != null;
+            return tagName is { };
         }
     }
 }

@@ -245,7 +245,7 @@ namespace MetadataExtractor.Formats.Eps
         {
             var buffer = DecodeHexCommentBlock(reader);
 
-            if (buffer != null)
+            if (buffer is { })
                 directories.AddRange(new PhotoshopReader().Extract(new SequentialByteArrayReader(buffer), buffer.Length));
         }
 
@@ -256,7 +256,7 @@ namespace MetadataExtractor.Formats.Eps
         {
             var buffer = DecodeHexCommentBlock(reader);
 
-            if (buffer != null)
+            if (buffer is { })
                 directories.Add(new IccReader().Extract(new ByteArrayReader(buffer)));
         }
 

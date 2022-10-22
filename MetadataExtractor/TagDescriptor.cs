@@ -114,7 +114,7 @@ namespace MetadataExtractor
             if (arrayIndex >= 0 && arrayIndex < descriptions.Length)
             {
                 var description = descriptions[arrayIndex];
-                if (description != null)
+                if (description is { })
                     return description;
             }
 
@@ -194,7 +194,7 @@ namespace MetadataExtractor
             while (labels.Length > bitIndex)
             {
                 var labelObj = labels[bitIndex];
-                if (labelObj != null)
+                if (labelObj is { })
                 {
                     var isBitSet = (value & 1) == 1;
                     if (labelObj is string[] labelPair && labelPair.Length == 2)

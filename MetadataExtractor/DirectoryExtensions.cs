@@ -36,7 +36,7 @@ namespace MetadataExtractor
         {
             var convertible = GetConvertibleObject(directory, tagType);
 
-            if (convertible != null)
+            if (convertible is { })
             {
                 try
                 {
@@ -77,7 +77,7 @@ namespace MetadataExtractor
         {
             var convertible = GetConvertibleObject(directory, tagType);
 
-            if (convertible != null)
+            if (convertible is { })
             {
                 try
                 {
@@ -118,7 +118,7 @@ namespace MetadataExtractor
         {
             var convertible = GetConvertibleObject(directory, tagType);
 
-            if (convertible != null)
+            if (convertible is { })
             {
                 try
                 {
@@ -159,7 +159,7 @@ namespace MetadataExtractor
         {
             var convertible = GetConvertibleObject(directory, tagType);
 
-            if (convertible != null)
+            if (convertible is { })
             {
                 try
                 {
@@ -198,7 +198,7 @@ namespace MetadataExtractor
         {
             var convertible = GetConvertibleObject(directory, tagType);
 
-            if (convertible != null)
+            if (convertible is { })
             {
                 try
                 {
@@ -239,7 +239,7 @@ namespace MetadataExtractor
         {
             var convertible = GetConvertibleObject(directory, tagType);
 
-            if (convertible != null)
+            if (convertible is { })
             {
                 try
                 {
@@ -280,7 +280,7 @@ namespace MetadataExtractor
         {
             var convertible = GetConvertibleObject(directory, tagType);
 
-            if (convertible != null)
+            if (convertible is { })
             {
                 try
                 {
@@ -321,7 +321,7 @@ namespace MetadataExtractor
         {
             var convertible = GetConvertibleObject(directory, tagType);
 
-            if (convertible != null)
+            if (convertible is { })
             {
                 try
                 {
@@ -362,7 +362,7 @@ namespace MetadataExtractor
         {
             var convertible = GetConvertibleObject(directory, tagType);
 
-            if (convertible != null)
+            if (convertible is { })
             {
                 try
                 {
@@ -403,7 +403,7 @@ namespace MetadataExtractor
         {
             var convertible = GetConvertibleObject(directory, tagType);
 
-            if (convertible != null)
+            if (convertible is { })
             {
                 try
                 {
@@ -550,7 +550,7 @@ namespace MetadataExtractor
             }
 
             var nullableInt = o as int?;
-            if (nullableInt != null)
+            if (nullableInt is { })
                 return new[] { (int)o };
 
             return null;
@@ -581,7 +581,7 @@ namespace MetadataExtractor
             }
 
             bytes = o as byte[];
-            if (bytes != null)
+            if (bytes is { })
                 return bytes;
 
             if (o is int[] ints)
@@ -609,7 +609,7 @@ namespace MetadataExtractor
             }
 
             var nullableInt = o as int?;
-            if (nullableInt != null)
+            if (nullableInt is { })
                 return new[] { (byte)nullableInt.Value };
 
             return null;
@@ -700,7 +700,7 @@ namespace MetadataExtractor
             if (o is StringValue sv)
                 s = sv.ToString();
 
-            if (s != null)
+            if (s is { })
             {
                 if (DateTime.TryParseExact(s, _datePatterns, CultureInfo.InvariantCulture, DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AdjustToUniversal, out dateTime))
                 {

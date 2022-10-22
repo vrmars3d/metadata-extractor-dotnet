@@ -102,7 +102,7 @@ namespace MetadataExtractor.Formats.Png
                     seenImageTrailer = true;
 
                 // chunkData will be null if we aren't interested in this chunk
-                if (chunkData is not null)
+                if (chunkData is { })
                     chunks.Add(new PngChunk(chunkType, chunkData));
 
                 seenChunkTypes.Add(chunkType);

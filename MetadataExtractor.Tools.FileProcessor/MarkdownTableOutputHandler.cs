@@ -40,20 +40,20 @@ namespace MetadataExtractor.Tools.FileProcessor
                 var subIfdDir = directories.OfType<ExifSubIfdDirectory>().FirstOrDefault();
                 var thumbDir = directories.OfType<ExifThumbnailDirectory>().FirstOrDefault();
 
-                if (ifd0Dir != null)
+                if (ifd0Dir is { })
                 {
                     Manufacturer = ifd0Dir.GetDescription(ExifDirectoryBase.TagMake);
                     Model = ifd0Dir.GetDescription(ExifDirectoryBase.TagModel);
                 }
 
                 var hasMakernoteData = false;
-                if (subIfdDir != null)
+                if (subIfdDir is { })
                 {
                     ExifVersion = subIfdDir.GetDescription(ExifDirectoryBase.TagExifVersion);
                     hasMakernoteData = subIfdDir.ContainsTag(ExifDirectoryBase.TagMakernote);
                 }
 
-                if (thumbDir != null)
+                if (thumbDir is { })
                 {
                     Thumbnail = thumbDir.TryGetInt32(ExifDirectoryBase.TagImageWidth, out int width) &&
                                 thumbDir.TryGetInt32(ExifDirectoryBase.TagImageHeight, out int height)

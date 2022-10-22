@@ -55,7 +55,7 @@ namespace MetadataExtractor.Samples
             height = flirRawDataDirectory.GetInt32(FlirRawDataDirectory.TagRawThermalImageHeight);
             imageBytes = flirRawDataDirectory.GetByteArray(FlirRawDataDirectory.TagRawThermalImage);
 
-            return imageBytes != null;
+            return imageBytes is { };
         }
 
         public static void WritePng(byte[] thermalImageBytes, int width, int height, string outputFile)

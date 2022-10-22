@@ -91,7 +91,7 @@ namespace MetadataExtractor
 
         private bool Equals(Age? other)
         {
-            return other != null && Years == other.Years && Months == other.Months && Days == other.Days && Hours == other.Hours && Minutes == other.Minutes && Seconds == other.Seconds;
+            return other is { } && Years == other.Years && Months == other.Months && Days == other.Days && Hours == other.Hours && Minutes == other.Minutes && Seconds == other.Seconds;
         }
 
         public override bool Equals(object? obj)

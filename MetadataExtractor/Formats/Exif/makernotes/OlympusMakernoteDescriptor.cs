@@ -646,7 +646,7 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         {
             var cameratype = Directory.GetString(OlympusMakernoteDirectory.TagCameraType);
 
-            if (cameratype != null)
+            if (cameratype is { })
             {
                 if (!Directory.TryGetInt32(OlympusMakernoteDirectory.TagJpegQuality, out int value))
                     return null;

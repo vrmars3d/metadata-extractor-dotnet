@@ -51,7 +51,7 @@ namespace MetadataExtractor.Formats.Ico
                 error = "Exception reading ICO file metadata: " + ex.Message;
             }
 
-            if (error != null)
+            if (error is { })
             {
                 var directory = new IcoDirectory();
                 directory.AddError(error);

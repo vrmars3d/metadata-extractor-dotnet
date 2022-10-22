@@ -93,7 +93,7 @@ namespace MetadataExtractor.Formats.Photoshop
 
             var directories = new List<Directory> { directory };
 
-            if (photoshopDirectories != null)
+            if (photoshopDirectories is { })
                 directories.AddRange(photoshopDirectories);
 
             // LAYER AND MASK INFORMATION SECTION (skipped)

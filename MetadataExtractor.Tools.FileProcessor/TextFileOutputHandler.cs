@@ -80,7 +80,7 @@ namespace MetadataExtractor.Tools.FileProcessor
 
                         // Special handling for XMP directory data
                         var xmpDirectory = directory as XmpDirectory;
-                        if (xmpDirectory?.XmpMeta != null)
+                        if (xmpDirectory?.XmpMeta is { })
                         {
                             var wrote = false;
 
@@ -159,7 +159,7 @@ namespace MetadataExtractor.Tools.FileProcessor
         private static TextWriter OpenWriter(string filePath)
         {
             var directoryPath = Path.GetDirectoryName(filePath);
-            Debug.Assert(directoryPath != null);
+            Debug.Assert(directoryPath is { });
             var metadataPath = Path.Combine(directoryPath, subdir);
             var fileName = Path.GetFileName(filePath);
 

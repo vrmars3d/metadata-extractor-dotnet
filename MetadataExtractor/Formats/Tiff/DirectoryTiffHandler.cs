@@ -32,7 +32,7 @@ namespace MetadataExtractor.Formats.Tiff
         protected void PushDirectory(Directory directory)
         {
             // If this is the first directory, don't add to the stack
-            if (CurrentDirectory != null)
+            if (CurrentDirectory is { })
             {
                 _directoryStack.Push(CurrentDirectory);
                 directory.Parent = CurrentDirectory;
@@ -48,10 +48,10 @@ namespace MetadataExtractor.Formats.Tiff
 
         private Directory GetCurrentOrErrorDirectory()
         {
-            if (CurrentDirectory != null)
+            if (CurrentDirectory is { })
                 return CurrentDirectory;
             var error = Directories.OfType<ErrorDirectory>().FirstOrDefault();
-            if (error != null)
+            if (error is { })
                 return error;
             error = new ErrorDirectory();
             PushDirectory(error);

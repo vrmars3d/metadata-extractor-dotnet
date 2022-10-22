@@ -192,7 +192,7 @@ namespace MetadataExtractor.Formats.Iptc
             // NOTE that there's a chance we've already loaded the value as a string above, but failed to parse the value
             var encodingName = directory.GetString(IptcDirectory.TagCodedCharacterSet);
             Encoding? encoding = null;
-            if (encodingName != null)
+            if (encodingName is { })
             {
                 try
                 {
@@ -203,7 +203,7 @@ namespace MetadataExtractor.Formats.Iptc
             }
 
             StringValue str;
-            if (encoding != null)
+            if (encoding is { })
                 str = reader.GetStringValue(tagByteCount, encoding);
             else
             {
