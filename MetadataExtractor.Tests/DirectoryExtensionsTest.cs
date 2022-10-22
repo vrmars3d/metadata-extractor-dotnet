@@ -116,10 +116,10 @@ namespace MetadataExtractor.Tests
 
             // NOTE string is not convertible to boolean other than for "true" and "false"
 
-            Test(BuildDirectory(_singleValues.Where(v => v is not string)), AssertPresentTrueBoolean, AssertMissingBoolean);
-            Test(BuildDirectory(_singleZeroValues.Where(v => v is not string)), AssertPresentFalseBoolean, AssertMissingBoolean);
-            Test(BuildDirectory(_arraysOfSingleValues.Where(v => v is not string[])), AssertPresentTrueBoolean, AssertMissingBoolean);
-            Test(BuildDirectory(_arraysOfSingleZeroValues.Where(v => v is not string[])), AssertPresentFalseBoolean, AssertMissingBoolean);
+            Test(BuildDirectory(_singleValues.Where(v => (v is string) == false)), AssertPresentTrueBoolean, AssertMissingBoolean);
+            Test(BuildDirectory(_singleZeroValues.Where(v => (v is string) == false)), AssertPresentFalseBoolean, AssertMissingBoolean);
+            Test(BuildDirectory(_arraysOfSingleValues.Where(v => (v is string[]) == false)), AssertPresentTrueBoolean, AssertMissingBoolean);
+            Test(BuildDirectory(_arraysOfSingleZeroValues.Where(v => (v is string[]) == false)), AssertPresentFalseBoolean, AssertMissingBoolean);
 
             var directory = new MockDirectory();
 
