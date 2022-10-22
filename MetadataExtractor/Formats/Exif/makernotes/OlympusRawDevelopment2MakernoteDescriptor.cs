@@ -120,7 +120,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         private string? GetFilterDescription(int tagId)
         {
-            if (Directory.GetObject(tagId) is not short[] values || values.Length == 0)
+            var values = Directory.GetObject(tagId) as short[];
+            if (values is null || values.Length == 0)
                 return null;
 
             var sb = new StringBuilder();

@@ -81,7 +81,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         public string? GetExternalFlashDescription()
         {
-            if (Directory.GetObject(OlympusFocusInfoMakernoteDirectory.TagExternalFlash) is not ushort[] values || values.Length < 2)
+            var values = Directory.GetObject(OlympusFocusInfoMakernoteDirectory.TagExternalFlash) as ushort[];
+            if (values is null || values.Length < 2)
                 return null;
 
             var join = $"{values[0]} {values[1]}";
@@ -130,7 +131,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         public string? GetManualFlashDescription()
         {
-            if (Directory.GetObject(OlympusFocusInfoMakernoteDirectory.TagManualFlash) is not short[] values)
+            var values = Directory.GetObject(OlympusFocusInfoMakernoteDirectory.TagManualFlash) as short[];
+            if (values is null)
                 return null;
 
             if (values[0] == 0)

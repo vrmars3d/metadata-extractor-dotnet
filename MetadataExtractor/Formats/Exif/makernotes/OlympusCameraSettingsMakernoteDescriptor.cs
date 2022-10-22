@@ -272,7 +272,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// <returns></returns>
         public string? GetAfAreasDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagAfAreas) is not uint[] points)
+            var points = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagAfAreas) as uint[];
+            if (points is null)
                 return null;
 
             var sb = new StringBuilder();
@@ -387,7 +388,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// <returns></returns>
         public string? GetFlashControlModeDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagFlashControlMode) is not ushort[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagFlashControlMode) as ushort[];
+            if (values is null)
                 return null;
 
             if (values.Length == 0)
@@ -658,7 +660,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// <returns></returns>
         public string? GetGradationDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagGradation) is not short[] values || values.Length < 3)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagGradation) as short[];
+            if (values is null || values.Length < 3)
                 return null;
 
             var join = $"{values[0]} {values[1]} {values[2]}";
@@ -765,7 +768,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         public string? GetNoiseFilterDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagNoiseFilter) is not short[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagNoiseFilter) as short[];
+            if (values is null)
                 return null;
 
             return $"{values[0]} {values[1]} {values[2]}" switch
@@ -785,7 +789,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         public string? GetPictureModeEffectDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagPictureModeEffect) is not short[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagPictureModeEffect) as short[];
+            if (values is null)
                 return null;
 
             return $"{values[0]} {values[1]} {values[2]}" switch
@@ -800,7 +805,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         public string? GetToneLevelDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagToneLevel) is not short[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagToneLevel) as short[];
+            if (values is null)
                 return null;
 
             var sb = new StringBuilder();
@@ -820,7 +826,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         public string? GetArtFilterEffectDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagArtFilterEffect) is not ushort[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagArtFilterEffect) as ushort[];
+            if (values is null)
                 return null;
 
             var sb = new StringBuilder();
@@ -900,7 +907,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         public string? GetColorCreatorEffectDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagColorCreatorEffect) is not short[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagColorCreatorEffect) as short[];
+            if (values is null)
                 return null;
 
             var sb = new StringBuilder();
@@ -926,7 +934,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// <returns></returns>
         public string? GetDriveModeDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagDriveMode) is not ushort[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagDriveMode) as ushort[];
+            if (values is null)
                 return null;
 
             if (values.Length == 0 || values.Length > 0 && values[0] == 0)
@@ -980,7 +989,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// <returns></returns>
         public string? GetPanoramaModeDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagPanoramaMode) is not ushort[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagPanoramaMode) as ushort[];
+            if (values is null)
                 return null;
 
             if (values.Length == 0 || values[0] == 0)
@@ -1010,7 +1020,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         public string? GetStackedImageDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagStackedImage) is not short[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagStackedImage) as short[];
+            if (values is null)
                 return null;
 
             int v1 = values[0];
@@ -1041,7 +1052,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// <returns></returns>
         public string? GetManometerReadingDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagManometerReading) is not int[] values || values.Length < 2)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagManometerReading) as int[];
+            if (values is null || values.Length < 2)
                 return null;
 
             return $"{values[0] / 10.0} m, {values[1] / 10.0} ft";
@@ -1062,7 +1074,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// <returns></returns>
         public string? GetRollAngleDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagRollAngle) is not short[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagRollAngle) as short[];
+            if (values is null)
                 return null;
 
             var ret = values[0] != 0
@@ -1081,7 +1094,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
         /// <returns></returns>
         public string? GetPitchAngleDescription()
         {
-            if (Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagPitchAngle) is not short[] values)
+            var values = Directory.GetObject(OlympusCameraSettingsMakernoteDirectory.TagPitchAngle) as short[];
+            if (values is null)
                 return null;
 
             // (second value is 0 if level gauge is off)
@@ -1099,7 +1113,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         private string? GetValueMinMaxDescription(int tagId)
         {
-            if (Directory.GetObject(tagId) is not short[] values || values.Length < 3)
+            var values = Directory.GetObject(tagId) as short[];
+            if (values is null || values.Length < 3)
                 return null;
 
             return $"{values[0]} (min {values[1]}, max {values[2]})";
@@ -1107,7 +1122,8 @@ namespace MetadataExtractor.Formats.Exif.Makernotes
 
         private string? GetFilterDescription(int tagId)
         {
-            if (Directory.GetObject(tagId) is not short[] values || values.Length == 0)
+            var values = Directory.GetObject(tagId) as short[];
+            if (values is null || values.Length == 0)
                 return null;
 
             var sb = new StringBuilder();
