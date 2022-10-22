@@ -35,7 +35,11 @@ namespace MetadataExtractor.Samples
         {
             var readers = JpegMetadataReader
                 .AllReaders
-                .Where(reader => reader is not FlirReader)
+                .Where(reader =>
+                {
+                    var flirReader = reader as FlirReader;
+                    return flirReader is null;
+                })
                 .Concat(new[] { new FlirReader { ExtractRawThermalImage = true } })
                 .ToList();
 

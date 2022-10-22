@@ -52,12 +52,20 @@ namespace MetadataExtractor.Samples
 
             var projectedCoordSystemType = geoTiff.GetUInt16(GeoTiffDirectory.TagProjectedCSType);
 
-            (bool isNorthernHemisphere, int zone) = projectedCoordSystemType switch
+            bool isNorthernHemisphere;
+            int zone;
+            if (projectedCoordSystemType >= 32601 && projectedCoordSystemType <= 32660)
             {
-                >= 32601 when projectedCoordSystemType <= 32660 => (true, projectedCoordSystemType - 32600),
-                >= 32701 when projectedCoordSystemType <= 32760 => (true, projectedCoordSystemType - 32700),
-                _ => (false, -1)
-            };
+                (isNorthernHemisphere, zone) = (true, projectedCoordSystemType - 32600);
+            }
+            else if (projectedCoordSystemType >= 32701 && projectedCoordSystemType <= 32760)
+            {
+                (isNorthernHemisphere, zone) = (true, projectedCoordSystemType - 32700);
+            }
+            else
+            {
+                (isNorthernHemisphere, zone) = (false, -1);
+            }
 
             if (zone == -1)
             {
